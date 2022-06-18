@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app-wrap">
+        <div class="row" id="current-weather">
+          <div class="col-8" id="search">
+            <form class="form-inline">
+             <div class="form-group mx-sm-3 mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="search-line"
+                placeholder="Enter your city"
+                autofocus="on"
+                autocomplete="off"
+              />
+             </div>
+            <button type="submit" class="btn btn-primary mb-2" id="search-button">
+              🔎
+            </button>
+            <button type="submit" class="btn btn-primary mb-2" id="current-location-button">
+              Current location
+            </button>
+            </form>
+            <div class="row" id="current-conditions">
+            <div class="col-4">Precipitation <br> <span id="precipitation"></span></div>
+            <div class="col-4">Humidity <br> <span id="humidity"></span>%</div>
+            <div class="col-4">Wind <br> <span id="wind"></span> km/h</div>
+        </div>
+          </div>
+          <div class="col-4" id="current-city">
+             <div class="card">
+              <div class="card-body">
+               <h1 class="current-city"></h1>
+               <h3 class="current-date"></h3>
+               <h1 class="current-time"></h1>
+              </div>
+             </div>
+          </div>
+        </div>          
+        <div class="row" id="five-days-forecast">
+          <div class="col-4">
+            <div class="row">
+          <div class="col-6">
+            <img src="images/sun.svg" alt="Sun icon" class="current-weather-img">
+          </div>
+            <div class="col-6" id="day-weather" >
+            <ul id="weather-of-the-day">
+              <li class="today">TODAY</li>
+              <li> <span id = "current-temperature"></span> <a href="#" id = "celsius">℃</a>| <a href="#" id = "fahrenheit"> ℉ </a> </li>
+              <li> <span id="description"></span></li>
+            </ul>
+          </div>
+          </div>
+          </div>      
+          <div class="col-2">
+            <ul id="weather-of-the-day">
+              <li class="today">TUE</li>
+              <li><img src="images/sun.svg" alt="Sun icon" class="weather-img"></li>
+              <li>  <span id = "temperature">15 </span>℃|℉ </a></li>
+            </ul>
+          </div>
+          <div class="col-2">  
+            <ul id="weather-of-the-day">
+              <li class="today">WED</li>
+              <li><img src="images/cloud-sun.svg" alt="Sun icon" class="weather-img"></li>
+              <li>  <span id = "temperature">13 </span>℃|℉</li>
+            </ul>
+          </div>
+          <div class="col-2">
+              <ul id="weather-of-the-day">
+              <li class="today">THU</li>
+              <li><img src="images/cloud-sun-rain.svg" alt="Sun icon" class="weather-img"></li>
+              <li> <span id = "temperature"> 10 </span>℃|℉</li>
+            </ul>
+          </div>
+          <div class="col-2">  
+            <ul id="weather-of-the-day">
+              <li class="today">FRI</li>
+              <li><img src="images/cloud-lightning.svg" alt="Sun icon" class="weather-img"></li>
+              <li> <span id = "temperature"> 8 </span>℃|℉</li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
