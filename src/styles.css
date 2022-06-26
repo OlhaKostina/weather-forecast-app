@@ -24,7 +24,6 @@ small {
   padding: 15px;
   padding-bottom: 0;
   border-radius: 10px;
-
   box-sizing: border-box;
 }
 
@@ -57,6 +56,7 @@ small {
   background: #5ac8c1;
   border-radius: 10px;
 }
+
 #search-button,
 #current-location {
   background: #5ac8c1;
@@ -88,4 +88,13 @@ small {
 }
 #day-weather {
   padding: 0;
+}
+
+#weather-of-the-day .active {
+  color: #7a7b7d;
+  cursor: default;
+}
+
+#weather-of-the-day .active:hover {
+  text-decoration: none;
 }

@@ -39,10 +39,10 @@ function displayCurrentTime() {
 displayCurrentTime();
 
 function displayCurrentWeather(response) {
+  celsiusTemperature = response.data.main.temp;
   document.querySelector(".current-city").innerHTML = response.data.name;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -83,23 +83,25 @@ function showCurrentLocation(event) {
 
 function convertToFahrenheit(event) {
   event.preventDefault();
+  celTemperature.classList.remove("active");
+  fahrenheitTemperature.classList.add("active");
   let temperatureElement = document.querySelector("#current-temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 let fahrenheitTemperature = document.querySelector("#fahrenheit");
 fahrenheitTemperature.addEventListener("click", convertToFahrenheit);
 
 function convertToCelsius(event) {
   event.preventDefault();
+  celTemperature.classList.add("active");
+  fahrenheitTemperature.classList.remove("active");
   let temperatureElement = document.querySelector("#current-temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature - 32) / 1.8);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-let celsiusTemperature = document.querySelector("#celsius");
-celsiusTemperature.addEventListener("click", convertToCelsius);
+let celTemperature = document.querySelector("#celsius");
+celTemperature.addEventListener("click", convertToCelsius);
+
+let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search");
 searchForm.addEventListener("submit", handleSubmit);
