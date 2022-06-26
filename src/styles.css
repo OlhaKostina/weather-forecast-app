@@ -14,19 +14,24 @@ small {
   font-size: 11px;
 }
 
+.weather-app-wrap {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.weather-app {
+  background: #d1f0ee;
+  padding: 15px;
+  padding-bottom: 0;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+}
+
 .current-time {
   font-size: 19px;
 }
 
-.weather-app-wrap {
-  background: #d1f0ee;
-  margin: 20px 0 3px 0;
-  padding: 15px;
-  padding-bottom: 0;
-  border-radius: 10px;
-  max-width: 600px;
-  box-sizing: border-box;
-}
 .card {
   background: #d1f0ee;
   border: none;
