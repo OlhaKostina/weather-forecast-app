@@ -72,6 +72,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
+  document.querySelector("#uvi").innerHTML = response.data.current.uvi;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = ``;
 
@@ -104,7 +105,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "41db31b7bfb54ee46c6a15c5c9d02e0d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
