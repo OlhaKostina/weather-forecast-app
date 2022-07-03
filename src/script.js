@@ -81,6 +81,29 @@ function showCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = ``;
+  let days = ["THU", "FRI", "SAT", "SUN"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class = "col-3">
+    <div id="weather-of-the-day-forecast">
+      <div class="today">${day}</div>
+      <img src="images/sun.svg" alt="Sun icon" class="weather-img">
+      <div>  <span id = "max-temperature">15° </span>  <span id = "min-temperature">10° </span> </div>
+    </div>
+    </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
 function convertToFahrenheit(event) {
   event.preventDefault();
   celTemperature.classList.remove("active");

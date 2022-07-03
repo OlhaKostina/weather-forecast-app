@@ -40,6 +40,7 @@ small {
   padding: 0;
   width: 500px;
 }
+
 .col-6 {
   text-align: center;
 }
@@ -86,6 +87,10 @@ small {
 #weather-of-the-day {
   padding: 10px 15px 0 0;
 }
+
+#weather-of-the-day-forecast {
+  padding-top: 10px;
+}
 #day-weather {
   padding: 0;
 }
@@ -93,8 +98,19 @@ small {
 #weather-of-the-day .active {
   color: #7a7b7d;
   cursor: default;
+  text-align: center;
 }
 
 #weather-of-the-day .active:hover {
   text-decoration: none;
+}
+
+#min-temperature {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+#forecast {
+  text-align: center;
+  color: #7a7b7d;
 }
