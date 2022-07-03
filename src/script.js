@@ -154,28 +154,6 @@ function showCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 }
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  celTemperature.classList.remove("active");
-  fahrenheitTemperature.classList.add("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
-}
-let fahrenheitTemperature = document.querySelector("#fahrenheit");
-fahrenheitTemperature.addEventListener("click", convertToFahrenheit);
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  celTemperature.classList.add("active");
-  fahrenheitTemperature.classList.remove("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-let celTemperature = document.querySelector("#celsius");
-celTemperature.addEventListener("click", convertToCelsius);
-
-let celsiusTemperature = null;
-
 let searchForm = document.querySelector("#search");
 searchForm.addEventListener("submit", handleSubmit);
 
