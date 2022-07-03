@@ -108,6 +108,12 @@ small {
   color: #7a7b7d;
 }
 
-#current-temperature {
-  line-height: 2.6em;
+#current-temperature,
+#units {
+  font-size: 25px;
+  line-height: 1.8em;
+}
+
+#units {
+  opacity: 0.7;
 }
